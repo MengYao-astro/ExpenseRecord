@@ -13,7 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
-builder.Services.AddScoped<IExpenseItemService, ExpenseItemSimpleService>();
+builder.Services.AddSingleton<IExpenseItemService, ExpenseItemSimpleService>();
 
 var app = builder.Build();
 
