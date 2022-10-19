@@ -1,0 +1,22 @@
+<p>expense-list works!</p>
+<form [formGroup]="form">
+    <div>
+      <span>description</span><input formControlName="description">
+      <span>type</span><input formControlName="type">
+      <span>amount</span><input formControlName="amount">
+      <span>date</span><input formControlName="date">
+    </div>
+  </form>
+
+  <div *ngFor=" let expense of expenseList">
+    <mat-card>
+        <mat-card-title>{{expense.description + " " + expense.type}}</mat-card-title>
+        <mat-card-subtitle>{{expense.date}}</mat-card-subtitle>
+        <mat-card-content>{{expense.amount}}</mat-card-content>
+        <mat-card-action>
+            <button mat-button (click)="delete(expense)"> Delete </button>
+        </mat-card-action>
+    </mat-card>
+
+  </div>
+
